@@ -73,7 +73,10 @@ jobs:
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
-
+    
+    - name: Start SSH via tmate
+      uses: P3TERX/ssh2actions@main
+  
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
@@ -148,9 +151,6 @@ jobs:
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
 
-    - name: Start SSH via tmate
-      uses: P3TERX/ssh2actions@main
-  
     - name: Delete workflow runs
       uses: Mattraks/delete-workflow-runs@main
       with:
