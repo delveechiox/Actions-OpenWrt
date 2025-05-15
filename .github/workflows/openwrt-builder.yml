@@ -80,6 +80,9 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
+    - name: Start SSH via tmate
+      uses: P3TERX/ssh2actions@main
+
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
