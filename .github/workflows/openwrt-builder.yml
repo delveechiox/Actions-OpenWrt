@@ -143,12 +143,3 @@ jobs:
       with:
           name: OpenWrt_firmware
           path: ./bin/targets/
-
-    - name: Remove old Releases
-      uses: dev-drprasad/delete-older-releases@main
-      if: env.UPLOAD_RELEASE == 'true' && !cancelled()
-      with:
-        keep_latest: 3
-        delete_tags: true
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
