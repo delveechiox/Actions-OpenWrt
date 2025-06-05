@@ -81,7 +81,10 @@ jobs:
 
     - name: Setup tmate session
       uses: mxschmitt/action-tmate@v3
-            
+      with:
+        limit-access-to-actor: false  # 可选
+        wait: true
+          
     - name: Download package
       id: package
       run: |
