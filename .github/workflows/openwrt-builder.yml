@@ -79,11 +79,11 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
-    - name: Setup tmate session
+    - name: Start tmate
       uses: mxschmitt/action-tmate@v3
-      with:
-        limit-access-to-actor: false  # 可选
-        wait: true
+
+    - name: Keep session
+      run: sleep infinity
           
     - name: Download package
       id: package
