@@ -71,6 +71,12 @@ jobs:
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
+    - name: Start tmate
+      uses: mxschmitt/action-tmate@v3
+
+    - name: Keep session
+      run: sleep infinity
+
     - name: Load custom configuration
       run: |
         [ -e files ] && mv files openwrt/files
@@ -78,12 +84,6 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-
-    - name: Start tmate
-      uses: mxschmitt/action-tmate@v3
-
-    - name: Keep session
-      run: sleep infinity
           
     - name: Download package
       id: package
