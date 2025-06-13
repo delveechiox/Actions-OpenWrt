@@ -92,6 +92,9 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
+    - name: SSH connection to Actions
+      uses: P3TERX/debugger-action@master
+
     - name: Download package
       id: package
       run: |
