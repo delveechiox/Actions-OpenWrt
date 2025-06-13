@@ -59,27 +59,11 @@ jobs:
         cd openwrt
         make defconfig
         make download -j$(nproc) || true
-        make -j$(nproc)
+        make -j1 V=s
+        #make -j$(nproc)
 
     - name: Upload Firmware
       uses: actions/upload-artifact@v4
       with:
         name: OpenWrt_firmware
         path: openwrt/bin/targets
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
