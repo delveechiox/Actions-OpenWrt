@@ -29,7 +29,7 @@ jobs:
     - name: Set up Environment
       run: |
         sudo apt-get update
-        sudo apt-get install -y git-core build-essential libssl-dev libncurses5-dev unzip gawk zlib1g-dev subversion wget python3 python3-distutils rsync
+        sudo apt-get install -y git-core build-essential libssl-dev libncurses5-dev unzip gawk zlib1g-dev subversion wget python3 python3-distutils python3-venv rsync
 
     - name: Clone Official OpenWrt
       run: |
